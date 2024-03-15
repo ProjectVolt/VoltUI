@@ -1,11 +1,9 @@
-import { Welcome } from '@/components/Welcome/Welcome';
-import { ColorSchemeToggle } from '../../components/ColorSchemeToggle/ColorSchemeToggle';
+import { Header } from '@/components/landing/Header';
 
 export default async function HomePage() {
   return (
     <>
-      <Welcome />
-      <ColorSchemeToggle />
+      <Header />
     </>
   );
 }

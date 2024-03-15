@@ -1,0 +1,38 @@
+.container {
+  width: calc(100% - 2 * $volt-side-margin-lg);
+  height: 150px;
+  margin-left: $volt-side-margin-lg;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    width: calc(100% - 2 * $volt-side-margin-sm);
+    margin-left: $volt-side-margin-sm;
+  }
+  @media (max-width: $mantine-breakpoint-xs) {
+    img {
+      width: 120px;
+    }
+  }
+}
+
+.buttons {
+  @media (max-width: $mantine-breakpoint-xs) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.buttons button:first-child {
+  margin-right: 20px;
+  @media (max-width: $mantine-breakpoint-xs) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
