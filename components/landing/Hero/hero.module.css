@@ -1,0 +1,61 @@
+.container {
+  width: calc(100% - 4 * $volt-side-margin-xl);
+  margin-left: calc(2 * $volt-side-margin-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h1 {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 0px;
+    width: 630px;
+  }
+  p {
+    font-size: 32px;
+    margin-top: 20px;
+    width: 550px;
+    color: var(--mantine-color-gray-7);
+  }
+  button {
+    font-size: 24px;
+    padding: 0px 70px;
+    height: 70px;
+  }
+  @media (max-width: $mantine-breakpoint-xxl) {
+    width: calc(100% - 2 * $volt-side-margin-xl);
+    margin-left: $volt-side-margin-xl;
+  }
+  @media (max-width: calc($mantine-breakpoint-xl - 90px)) {
+    img {
+      display: none;
+    }
+  }
+  @media (max-width: $mantine-breakpoint-sm) {
+    width: calc(100% - 4 * $volt-side-margin-sm);
+    margin-left: calc(2 * $volt-side-margin-sm);
+    h1 {
+      font-size: 48px;
+      width: 100%;
+    }
+    p {
+      font-size: 24px;
+      width: 400px;
+    }
+  }
+  @media (max-width: $mantine-breakpoint-xs) {
+    h1 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 18px;
+      width: 100%;
+    }
+    button {
+      margin-top: 10px;
+      font-size: 16px;
+      padding: 0px 0px;
+      height: 60px;
+      width: 100%;
+    }
+  }
+}
