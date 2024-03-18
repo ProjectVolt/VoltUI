@@ -1,0 +1,65 @@
+.container {
+  margin-top: $volt-side-margin-lg;
+  width: calc(100% - 4 * $volt-side-margin-xl);
+  margin-left: calc(2 * $volt-side-margin-xl);
+  height: 325px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  @media (max-width: calc($mantine-breakpoint-xxl + 300px)) {
+    grid-template-columns: repeat(2, 1fr);
+    height: calc(2 * 325px + 20px);
+  }
+  @media (max-width: $mantine-breakpoint-md) {
+    grid-template-columns: 1fr;
+    height: calc(4 * 325px + 3 * 20px);
+  }
+  @media (max-width: $mantine-breakpoint-sm) {
+    height: calc(4 * 260px + 3 * 20px);
+  }
+  @media (max-width: $mantine-breakpoint-xxl) {
+    width: calc(100% - 2 * $volt-side-margin-xl);
+    margin-left: $volt-side-margin-xl;
+  }
+  @media (max-width: $mantine-breakpoint-sm) {
+    margin-top: $volt-side-margin-md;
+    width: calc(100% - 4 * $volt-side-margin-sm);
+    margin-left: calc(2 * $volt-side-margin-sm);
+  }
+}
+
+.card {
+  border-radius: 20px;
+  border: solid 1px var(--mantine-color-gray-5);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card svg {
+  color: var(--mantine-color-teal-6);
+  margin-top: 22px;
+  font-size: 32px;
+}
+
+.card h2 {
+  margin: 0px;
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: 500;
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 20px;
+  }
+}
+
+.card p {
+  margin: 0px;
+  margin-top: 10px;
+  width: calc(100% - 2 * 28px);
+  font-size: 20px;
+  color: var(--mantine-color-gray-7);
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 16px;
+  }
+}

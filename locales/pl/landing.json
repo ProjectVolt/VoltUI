@@ -3,5 +3,13 @@
   "signup": "Zarejestruj się",
   "title": "Ucz się, rywalizuj, zwyciężaj z Volt!",
   "description": "Zostań programistą przyszłości. Volt pokaże Ci drogę.",
-  "signup-cta": "Zacznij swoją przygodę"
+  "signup-cta": "Zacznij swoją przygodę",
+  "card1-title": "Praktyczne Wyzwania",
+  "card1-description": "Rozwiązuj wyjątkowe problemy programistyczne poprzez interaktywne zadania w czasie rzeczywistym.",
+  "card2-title": "Rywalizacja i Rankingi",
+  "card2-description": "Pokaż swoją mocną stronę. Testuj swoje umiejętności w ekscytujących konkursach i wspinaj się w rankingach.",
+  "card3-title": "Doświadczenie",
+  "card3-description": "Volt jest stworzony przez jednego z autorów platformy Bajton, zaufanego narzędzia edukacyjnego z wieloletnim doświadczeniem.",
+  "card4-title": "Wybierz Swój Język",
+  "card4-description": "Ucz się programować w języku, który najbardziej Ci odpowiada. Volt oferuje szeroki wybór, nie musisz się ograniczać."
 }
