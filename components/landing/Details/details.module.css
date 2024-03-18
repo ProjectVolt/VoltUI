@@ -1,0 +1,85 @@
+.container {
+  margin-top: $volt-side-margin-xl;
+  width: calc(100% - 4 * $volt-side-margin-xl);
+  margin-left: calc(2 * $volt-side-margin-xl);
+  @media (max-width: $mantine-breakpoint-xxl) {
+    width: calc(100% - 2 * $volt-side-margin-xl);
+    margin-left: $volt-side-margin-xl;
+  }
+  @media (max-width: $mantine-breakpoint-sm) {
+    margin-top: $volt-side-margin-md;
+    width: calc(100% - 4 * $volt-side-margin-sm);
+    margin-left: calc(2 * $volt-side-margin-sm);
+  }
+}
+
+.container h1 {
+  font-size: 48px;
+  font-weight: 600;
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 32px;
+  }
+}
+
+.container h2 {
+  font-size: 24px;
+  font-weight: normal;
+  color: var(--mantine-color-gray-7);
+  max-width: 725px;
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 20px;
+  }
+}
+
+.subContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $volt-side-margin-lg;
+  margin-top: $volt-side-margin-md;
+  @media (max-width: $mantine-breakpoint-xxl) {
+    max-width: 725px;
+    grid-template-columns: 1fr;
+    gap: $volt-side-margin-sm;
+  }
+}
+
+.sub {
+  min-height: 500px;
+}
+
+.sub h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: $volt-side-margin-sm;
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 20px;
+  }
+}
+
+.sub h4 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--mantine-color-gray-7);
+  display: inline;
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 18px;
+  }
+}
+
+.sub p {
+  font-size: 20px;
+  font-weight: normal;
+  color: var(--mantine-color-gray-7);
+  display: inline;
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 18px;
+  }
+}
+
+.sub div {
+  margin-left: $volt-side-margin-sm;
+  @media (max-width: $mantine-breakpoint-sm) {
+    margin-left: 0px;
+  }
+}
