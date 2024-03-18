@@ -1,0 +1,37 @@
+.container {
+  margin-top: $volt-side-margin-md;
+  margin-bottom: calc(2 * $volt-side-margin-xl);
+  width: calc(100% - 4 * $volt-side-margin-xl);
+  margin-left: calc(2 * $volt-side-margin-xl);
+  @media (max-width: $mantine-breakpoint-xxl) {
+    width: calc(100% - 2 * $volt-side-margin-xl);
+    margin-left: $volt-side-margin-xl;
+  }
+  @media (max-width: $mantine-breakpoint-sm) {
+    margin-top: $volt-side-margin-md;
+    width: calc(100% - 4 * $volt-side-margin-sm);
+    margin-left: calc(2 * $volt-side-margin-sm);
+  }
+}
+
+.container h1 {
+  font-size: 48px;
+  font-weight: 600;
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 32px;
+  }
+}
+
+.container h2 {
+  font-size: 24px;
+  font-weight: normal;
+  color: var(--mantine-color-gray-7);
+  max-width: 725px;
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 20px;
+  }
+}
+
+.container a {
+  margin-top: $volt-side-margin-md;
+}

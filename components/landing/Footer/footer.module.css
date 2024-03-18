@@ -1,0 +1,10 @@
+.container {
+  margin-top: $volt-side-margin-xl;
+  height: 80px;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid var(--mantine-color-gray-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
