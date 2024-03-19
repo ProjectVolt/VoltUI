@@ -1,0 +1,17 @@
+.container img {
+  margin-top: $volt-side-margin-md;
+  margin-left: $volt-side-margin-lg;
+  @media (max-width: $mantine-breakpoint-sm) {
+    margin: 0;
+  }
+}
+
+.container {
+  @media (max-width: $mantine-breakpoint-sm) {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "login-form-title": "Witaj ponownie!",
+  "login-form-username-label": "Nazwa użytkownika",
+  "login-form-username-min": "Wymagane są co najmniej 3 znaki",
+  "login-form-username-max": "Wymagane jest mniej niż 50 znaków",
+  "login-form-username-required": "Nazwa użytkownika jest wymagana",
+  "login-form-password-label": "Hasło",
+  "login-form-password-min": "Wymagane jest co najmniej 8 znaków",
+  "login-form-password-max": "Wymagane jest mniej niż 250 znaków",
+  "login-form-password-required": "Hasło jest wymagane",
+  "login-form-submit-button": "Zaloguj się",
+  "login-form-no-account": "Nie masz jeszcze konta?",
+  "login-form-register": "Zarejestruj się",
+  "login-form-forgot-password": "Nie pamiętasz hasła?",
+  "login-form-forgot-password-reset": "Zresetuj",
+  "login-failed-notification-title": "Błąd logowania",
+  "login-failed-notification-message": "Nieprawidłowe dane logowania"
+}

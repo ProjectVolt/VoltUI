@@ -1,6 +1,8 @@
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 import { Poppins } from 'next/font/google';
 import { i18nConfig } from '@/i18nConfig';
 
@@ -41,8 +43,10 @@ export default function RootLayout({
         <MantineProvider
           theme={{
             fontFamily: poppins.style.fontFamily,
+            primaryColor: 'teal',
           }}
         >
+          <Notifications />
           {children}
         </MantineProvider>
       </body>
