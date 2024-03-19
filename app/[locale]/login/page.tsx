@@ -3,7 +3,7 @@ import { Form } from '@/components/login/Form';
 import { Header } from '@/components/login/Header';
 import { Panel } from '@/components/login/Panel';
 
-export default function LoginPage({ params: { locale } }: { params: { locale: string } }) {
+export default function LoginPage() {
   return (
     <Background>
       <Panel>
