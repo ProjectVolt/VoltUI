@@ -15,6 +15,8 @@
   "login-form-forgot-password-reset": "Zresetuj",
   "login-failed-notification-title": "Błąd logowania",
   "login-failed-notification-message": "Nieprawidłowe dane logowania",
+  "login-failed-bad-request-notification-message": "Nieprawidłowy format danych",
+  "login-failed-server-error-notification-message": "Błąd serwera",
   "register-form-title": "Witaj w Volt!",
   "register-form-email-invalid": "Nieprawidłowy adres e-mail",
   "register-form-email-required": "Adres e-mail jest wymagany",
@@ -25,5 +27,9 @@
   "register-form-school-description": "Nie wymagne",
   "register-already-member": "Masz już konto?",
   "register-failed-notification-title": "Błąd rejestracji",
-  "register-failed-notification-message-email-taken": "Adres e-mail jest już zajęty"
+  "register-failed-notification-message-username-taken": "Nazwa użytkownika jest już zajęta",
+  "register-failed-notification-message-email-taken": "Adres e-mail jest już zajęty",
+  "register-failed-notification-message-registration-not-allowed": "Rejestracja jest wyłączona",
+  "register-failed-notification-message-bad-request": "Nieprawidłowy format danych",
+  "register-notification-message-server-error": "Błąd serwera"
 }

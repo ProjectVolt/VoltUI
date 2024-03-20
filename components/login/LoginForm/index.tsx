@@ -1,17 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm } from '@mantine/form';
 import { yupResolver } from 'mantine-form-yup-resolver';
+import { useAtom } from 'jotai';
+import Link from 'next/link';
 import * as yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import { Anchor, Button, Divider, TextInput } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
-import Link from 'next/link';
 import classes from './form.module.css';
+import { tokenAtom } from '@/atoms/tokenAtom';
+import { login } from '@/data';
+import { useAtomEffect } from '@/utils/useAtomEffect';
 
 export function Form() {
   const { t } = useTranslation();
+  const router = useRouter();
+  const [, setToken] = useAtom(tokenAtom);
+
+  useAtomEffect(
+    useCallback(
+      (get) => {
+        const currentToken = get(tokenAtom);
+        if (currentToken) {
+          router.push('/dashboard');
+        }
+      },
+      [tokenAtom]
+    )
+  );
 
   const schema = yup.object().shape({
     username: yup
@@ -37,21 +56,42 @@ export function Form() {
 
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (values) => {
-    console.log(values);
+  const handleSubmit = (values: { username: string; password: string }) => {
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      form.setErrors({
-        username: t('login-failed-notification-message'),
-        password: t('login-failed-notification-message'),
+    login(values.username, values.password)
+      .then((result: string) => {
+        setToken(result);
+      })
+      .catch((error) => {
+        setLoading(false);
+        let message: string;
+        let isInvalidCredentials = false;
+        switch (error.message) {
+          case 'invalid-credentials':
+            message = t('login-failed-notification-message');
+            isInvalidCredentials = true;
+            break;
+          case 'invalid-data':
+            message = t('login-failed-bad-request-notification-message');
+            break;
+          case 'unexpected-error':
+          case 'token-not-found':
+          default:
+            message = t('login-failed-server-error-notification-message');
+            break;
+        }
+        if (isInvalidCredentials) {
+          form.setErrors({
+            username: message,
+            password: message,
+          });
+        }
+        notifications.show({
+          title: t('login-failed-notification-title'),
+          message,
+          color: 'red',
+        });
       });
-      notifications.show({
-        title: t('login-failed-notification-title'),
-        message: t('login-failed-notification-message'),
-        color: 'red',
-      });
-    }, 2000);
   };
 
   return (

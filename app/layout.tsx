@@ -4,6 +4,7 @@ import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { Poppins } from 'next/font/google';
+import { Provider } from 'jotai';
 import { i18nConfig } from '@/i18nConfig';
 
 export const metadata = {
@@ -47,7 +48,7 @@ export default function RootLayout({
           }}
         >
           <Notifications />
-          {children}
+          <Provider>{children}</Provider>
         </MantineProvider>
       </body>
     </html>

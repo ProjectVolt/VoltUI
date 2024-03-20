@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useForm } from '@mantine/form';
 import { yupResolver } from 'mantine-form-yup-resolver';
 import * as yup from 'yup';
@@ -8,10 +9,26 @@ import { useTranslation } from 'react-i18next';
 import { Button, Divider, TextInput } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import Link from 'next/link';
+import { register } from '@/data/register';
+import { useAtomEffect } from '@/utils/useAtomEffect';
+import { tokenAtom } from '@/atoms/tokenAtom';
 import classes from './form.module.css';
 
 export function Form() {
   const { t } = useTranslation();
+  const router = useRouter();
+
+  useAtomEffect(
+    useCallback(
+      (get) => {
+        const currentToken = get(tokenAtom);
+        if (currentToken) {
+          router.push('/dashboard');
+        }
+      },
+      [tokenAtom]
+    )
+  );
 
   const schema = yup.object().shape({
     email: yup
@@ -48,20 +65,48 @@ export function Form() {
 
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (values) => {
-    console.log(values);
+  const handleSubmit = (values: {
+    email: string;
+    username: string;
+    password: string;
+    school?: string;
+  }) => {
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      form.setErrors({
-        email: t('register-failed-notification-message-email-taken'),
+    register(values.email, values.username, values.password, values.school)
+      .then(() => router.push('/login'))
+      .catch((error) => {
+        setLoading(false);
+        let message: string;
+        switch (error.message) {
+          case 'username-already-exists':
+            message = t('register-failed-notification-message-username-taken');
+            form.setErrors({
+              username: message,
+            });
+            break;
+          case 'email-already-exists':
+            message = t('register-failed-notification-message-email-taken');
+            form.setErrors({
+              email: message,
+            });
+            break;
+          case 'registration-not-allowed':
+            message = t('register-failed-notification-message-registration-not-allowed');
+            break;
+          case 'invalid-data':
+            message = t('register-failed-notification-message-bad-request');
+            break;
+          case 'unexpected-error':
+          default:
+            message = t('register-notification-message-server-error');
+            break;
+        }
+        notifications.show({
+          title: t('register-failed-notification-title'),
+          message,
+          color: 'red',
+        });
       });
-      notifications.show({
-        title: t('register-failed-notification-title'),
-        message: t('register-failed-notification-message-email-taken'),
-        color: 'red',
-      });
-    }, 2000);
   };
 
   return (
