@@ -14,5 +14,16 @@
   "login-form-forgot-password": "Nie pamiętasz hasła?",
   "login-form-forgot-password-reset": "Zresetuj",
   "login-failed-notification-title": "Błąd logowania",
-  "login-failed-notification-message": "Nieprawidłowe dane logowania"
+  "login-failed-notification-message": "Nieprawidłowe dane logowania",
+  "register-form-title": "Witaj w Volt!",
+  "register-form-email-invalid": "Nieprawidłowy adres e-mail",
+  "register-form-email-required": "Adres e-mail jest wymagany",
+  "register-form-username-invalid": "Nazwa użytkownika jest nieprawidłowa",
+  "register-form-email-label": "Adres e-mail",
+  "register-form-school-label": "Szkoła",
+  "register-form-school-max": "Wymagane jest mniej niż 100 znaków",
+  "register-form-school-description": "Nie wymagne",
+  "register-already-member": "Masz już konto?",
+  "register-failed-notification-title": "Błąd rejestracji",
+  "register-failed-notification-message-email-taken": "Adres e-mail jest już zajęty"
 }
