@@ -1,0 +1,8 @@
+.background {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

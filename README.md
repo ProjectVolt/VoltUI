@@ -2,6 +2,16 @@
 
 The project Volt's front-end application.
 
+## Getting started
+
+### Environment variables
+
+Create `.env.local` file in the root of the project and fill it with the following content:
+
+```env
+NEXT_PUBLIC_API_URL={YOUR_VOLT_CORE_INSTANCE_URL}
+```
+
 ## npm scripts
 
 ### Build and dev scripts
