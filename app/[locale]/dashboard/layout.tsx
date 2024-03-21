@@ -1,6 +1,7 @@
 import React from 'react';
 import initTranslations from '@/app/i18n';
 import TranslationProvider from '@/app/[locale]/TranslationProvider';
+import { RedirectNotLoggedIn } from '@/components/shared/redirect';
 
 const i18nNamespaces = ['dashboard'];
 
@@ -9,7 +10,7 @@ export default async function Layout({ children, params: { locale } }: any) {
 
   return (
     <TranslationProvider locale={locale} resources={resources} namespaces={i18nNamespaces}>
-      {children}
+      <RedirectNotLoggedIn>{children}</RedirectNotLoggedIn>
     </TranslationProvider>
   );
 }
