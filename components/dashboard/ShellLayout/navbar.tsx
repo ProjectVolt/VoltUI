@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {
   IoClipboardOutline,
   IoTrophyOutline,
@@ -40,9 +39,8 @@ export function Navbar() {
   const { t } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();
-  console.log(pathname);
 
-  const items = data.map((item, index) => (
+  const items = data.map((item) => (
     <NavLink
       key={item.label}
       active={item.path === pathname}
