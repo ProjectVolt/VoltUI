@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { AppShell, Burger, Flex, Group } from '@mantine/core';
 import { Logo } from '@/components/shared/logo';
 import { User } from './user';
+import { Navbar } from './navbar';
 
 export function ShellLayout({ children }: { children: any }) {
   const [opened, setOpened] = useState(false);
@@ -11,11 +12,10 @@ export function ShellLayout({ children }: { children: any }) {
     <AppShell
       header={{ height: 80 }}
       navbar={{
-        width: 300,
+        width: 280,
         breakpoint: 'sm',
         collapsed: { mobile: !opened },
       }}
-      padding="xl"
     >
       <AppShell.Header>
         <Flex h="100%" w="100%" px="xl" align="center" justify="space-between">
@@ -27,7 +27,9 @@ export function ShellLayout({ children }: { children: any }) {
         </Flex>
       </AppShell.Header>
 
-      <AppShell.Navbar p="xl">Navbar</AppShell.Navbar>
+      <AppShell.Navbar>
+        <Navbar />
+      </AppShell.Navbar>
 
       <AppShell.Main>{children}</AppShell.Main>
     </AppShell>
