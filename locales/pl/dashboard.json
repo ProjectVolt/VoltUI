@@ -1,1 +1,9 @@
-{}
+{
+  "user-menu-error-title": "Błąd",
+  "user-menu-error-message": "Nie można załadować danych użytkownika",
+  "user-menu-app-section": "Volt",
+  "user-menu-app-settings": "Panel sterowania",
+  "user-menu-user-section": "Użytkownik",
+  "user-menu-user-settings": "Ustawienia",
+  "user-menu-user-logout": "Wyloguj"
+}

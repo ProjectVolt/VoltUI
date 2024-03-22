@@ -1,0 +1,12 @@
+.userData {
+  flex: 1;
+  @media (max-width: $mantine-breakpoint-sm) {
+    display: none;
+  }
+}
+
+.arrow {
+  @media (max-width: $mantine-breakpoint-sm) {
+    display: none;
+  }
+}
