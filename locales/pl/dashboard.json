@@ -13,5 +13,17 @@
   "navbar-stats-title": "Statystyki",
   "navbar-stats-description": "Rankingi i statystyki",
   "navbar-activity-title": "Aktywność",
-  "navbar-activity-description": "Ostatnia aktywność"
+  "navbar-activity-description": "Ostatnia aktywność",
+  "user-settings-header-title": "Ustawienia",
+  "user-settings-header-subtitle": "Zarządzaj swoim kontem",
+  "user-settings-github-label": "GitHub",
+  "user-settings-school-label": "Szkoła",
+  "user-settings-save-button": "Zapisz zmiany",
+  "user-settings-update-github-max": "GitHub może zawierać maksymalnie 60 znaków",
+  "user-settings-update-school-max": "Szkoła może zawierać maksymalnie 60 znaków",
+  "user-settings-update-success-title": "Sukces",
+  "user-settings-update-success-message": "Zaktualizowano ustawienia",
+  "user-settings-update-failure-title": "Błąd",
+  "user-settings-update-failure-message": "Nie udało się zaktualizować ustawień",
+  "user-settings-update-invalid-data": "Nieprawidłowy fromat danych"
 }

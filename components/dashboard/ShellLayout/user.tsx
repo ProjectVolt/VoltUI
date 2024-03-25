@@ -85,7 +85,10 @@ export function User() {
             <Menu.Item leftSection={<IoSettingsOutline />}>{t('user-menu-app-settings')}</Menu.Item>
             <Menu.Divider />
             <Menu.Label>{t('user-menu-user-section')}</Menu.Label>
-            <Menu.Item leftSection={<IoSettingsOutline />}>
+            <Menu.Item
+              onClick={() => navigate('/dashboard/settings')}
+              leftSection={<IoSettingsOutline />}
+            >
               {t('user-menu-user-settings')}
             </Menu.Item>
             <Menu.Item onClick={() => navigate('/logout')} leftSection={<IoLogOutOutline />}>

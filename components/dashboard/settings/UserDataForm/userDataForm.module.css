@@ -1,0 +1,14 @@
+.container {
+  margin: 10px $volt-side-margin-md;
+  @media (max-width: $mantine-breakpoint-sm) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0px;
+  }
+  h3 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+}
