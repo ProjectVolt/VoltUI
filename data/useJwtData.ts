@@ -21,6 +21,7 @@ export function useJwtData() {
   const jwtData = parseJwt(jwt);
   return {
     jwtData,
+    token: jwt,
     error: null,
   };
 }

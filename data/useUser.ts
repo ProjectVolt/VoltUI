@@ -46,3 +46,17 @@ export function useUser(): { user: User | null; isLoading: boolean; error: strin
     error,
   };
 }
+
+export function useUserById(id: number): {
+  user: User | null;
+  isLoading: boolean;
+  error: string | null;
+} {
+  const { data, error, isLoading } = useSWR(`user/${id}`);
+
+  return {
+    user: data,
+    isLoading,
+    error,
+  };
+}

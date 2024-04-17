@@ -1,13 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { AppShell, Burger, Flex, Group } from '@mantine/core';
 import { Logo } from '@/components/shared/logo';
 import { User } from './user';
 import { Navbar } from './navbar';
+import { AdminNavbar } from './adminNavbar';
 
 export function ShellLayout({ children }: { children: any }) {
   const [opened, setOpened] = useState(false);
+  const pathname = usePathname();
   return (
     <AppShell
       header={{ height: 80 }}
@@ -28,7 +31,7 @@ export function ShellLayout({ children }: { children: any }) {
       </AppShell.Header>
 
       <AppShell.Navbar>
-        <Navbar />
+        {pathname.startsWith('/dashboard/admin') ? <AdminNavbar /> : <Navbar />}
       </AppShell.Navbar>
 
       <AppShell.Main>{children}</AppShell.Main>
