@@ -4,7 +4,6 @@ import { notifications } from '@mantine/notifications';
 import { useViewportSize } from '@mantine/hooks';
 import { useTranslation } from 'react-i18next';
 import { useJwtData, useUserById, updateProblem, Problem, Tag } from '@/data';
-import { redirect } from 'next/navigation';
 
 const BREAKPOINT_WIDTH = 768;
 
