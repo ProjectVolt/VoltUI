@@ -50,7 +50,7 @@ export function ProblemForm({
       visible: true,
       name: '',
       description: '',
-      languages: [],
+      languages: ['python', 'c', 'cpp'],
       timeLimit: 1000,
       memoryLimit: 250,
       difficulty: 'easy',
