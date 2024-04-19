@@ -30,6 +30,16 @@ export type Problem = {
   compileErrors: number;
 };
 
+export type AdminProblem = Problem & {
+  testCases: {
+    id: number;
+    name: string;
+    input: string;
+    output: string;
+    maxScore: number;
+  }[];
+};
+
 export function useProblems(
   search: string,
   page: number,
@@ -47,6 +57,21 @@ export function useProblems(
     problems: Array.isArray(data) ? data : [],
     isLoading,
     error: error ?? (Array.isArray(data) ? undefined : 'An error occurred'),
+    mutate,
+  };
+}
+
+export function useAdminProblem(id: number): {
+  problem: AdminProblem | null;
+  isLoading: boolean;
+  error: string | null;
+  mutate: () => void;
+} {
+  const { data, error, isLoading, mutate } = useSWR(`problem/admin/${id}`);
+  return {
+    problem: data,
+    isLoading,
+    error,
     mutate,
   };
 }

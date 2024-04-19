@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { Box, Button, Flex, Input, Skeleton } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import { IoSearchOutline, IoAdd } from 'react-icons/io5';
-import classes from './problems.module.css';
+import Link from 'next/link';
 import { ProblemList } from './list';
 import { useProblems } from '@/data';
+import classes from './problems.module.css';
 
 const PAGE_SIZE = 10;
 
@@ -66,7 +67,14 @@ export function AdminProblems() {
               placeholder={t('admin-problem-list-search')}
               leftSection={<IoSearchOutline />}
             />
-            <Button radius="md" variant="outline" ml="sm" leftSection={<IoAdd size={20} />}>
+            <Button
+              radius="md"
+              variant="outline"
+              ml="sm"
+              component={Link}
+              href="/dashboard/admin/problems/add"
+              leftSection={<IoAdd size={20} />}
+            >
               {t('admin-problem-list-create')}
             </Button>
           </Flex>

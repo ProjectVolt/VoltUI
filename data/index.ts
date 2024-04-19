@@ -5,3 +5,4 @@ export * from './useJwtData';
 export * from './updateUser';
 export * from './useProblem';
 export * from './updateProblem';
+export * from './addTag';
