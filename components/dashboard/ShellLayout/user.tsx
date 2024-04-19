@@ -7,7 +7,7 @@ import { IoSettingsOutline, IoLogOutOutline } from 'react-icons/io5';
 import { useTranslation } from 'react-i18next';
 import { usePathname, useRouter } from 'next/navigation';
 import { notifications } from '@mantine/notifications';
-import { User, useUser } from '@/data';
+import { User, useJwtData, useUser } from '@/data';
 import classes from './user.module.css';
 
 interface UserButtonProps extends React.ComponentPropsWithoutRef<'button'> {
@@ -63,25 +63,25 @@ function DashboardSwitch(props: { navigate: (path: string) => void }) {
 
 export function User() {
   const { t } = useTranslation();
+  const { token } = useJwtData();
   const { user, error, isLoading } = useUser();
-  const [onClient, setOnClient] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setOnClient(true);
-  }, []);
-  const router = useRouter();
-  const navigate = (path: string) => router.push(path);
-  useEffect(() => {
-    if (error) {
+    if (!token) return;
+    if (error && !isLoading) {
       notifications.show({
         title: t('user-menu-error-title'),
         message: t('user-menu-error-message'),
         color: 'red',
       });
     }
-  }, [error]);
+    setLoading(isLoading);
+  }, [isLoading, error, token]);
+  const router = useRouter();
+  const navigate = (path: string) => router.push(path);
   return (
     <div>
-      {!onClient || isLoading ? (
+      {loading ? (
         <Group>
           <Skeleton height={40} circle />
 
