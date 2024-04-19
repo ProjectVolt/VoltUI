@@ -21,13 +21,14 @@ function Pagination({
   count: number;
   mt: string;
 }) {
+  const { t } = useTranslation();
   return (
     <Flex mt={mt} justify="center">
       <Button onClick={() => onChange(value - 1)} disabled={value === 1}>
-        Previous
+        {t('admin-problem-list-previous')}
       </Button>
       <Button ml="sm" onClick={() => onChange(value + 1)} disabled={count < PAGE_SIZE}>
-        Next
+        {t('admin-problem-list-next')}
       </Button>
     </Flex>
   );

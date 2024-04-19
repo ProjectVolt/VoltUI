@@ -44,6 +44,8 @@
   "admin-problem-list-table-difficulty-hard": "Trudne",
   "admin-problem-list-error-title": "Błąd",
   "admin-problem-list-error-message": "Nie udało się załadować listy zadań",
+  "admin-problem-list-previous": "Poprzednia",
+  "admin-problem-list-next": "Następna",
   "admin-problem-add-title": "Utwórz zadanie",
   "admin-problem-add-schema-visible-required": "Widoczność jest wymagana",
   "admin-problem-add-schema-title-min": "Tytuł musi mieć co najmniej 3 znaki",
