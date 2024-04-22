@@ -14,13 +14,14 @@ export function useJwtData() {
   if (!token || !token.startsWith('Bearer ')) {
     return {
       jwtData: null,
-      error: "Token doesn't exist",
+      error: 'no-token',
     };
   }
   const jwt = token.split('Bearer ')[1];
   const jwtData = parseJwt(jwt);
   return {
     jwtData,
+    token: jwt,
     error: null,
   };
 }

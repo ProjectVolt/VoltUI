@@ -1,0 +1,11 @@
+.mdxeditor {
+  border: 1px solid var(--mantine-color-gray-3);
+  border-radius: var(--mantine-radius-lg);
+}
+
+.mdxeditor-toolbar {
+  border-top-left-radius: var(--mantine-radius-lg);
+  border-top-right-radius: var(--mantine-radius-lg);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
