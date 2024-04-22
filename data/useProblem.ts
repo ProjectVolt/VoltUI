@@ -61,6 +61,21 @@ export function useProblems(
   };
 }
 
+export function useProblem(id: number): {
+  problem: Problem | null;
+  isLoading: boolean;
+  error: string | null;
+  mutate: () => void;
+} {
+  const { data, error, isLoading, mutate } = useSWR(`problem/${id}`);
+  return {
+    problem: data,
+    isLoading,
+    error,
+    mutate,
+  };
+}
+
 export function useAdminProblem(id: number): {
   problem: AdminProblem | null;
   isLoading: boolean;

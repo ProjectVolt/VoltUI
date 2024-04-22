@@ -1,0 +1,56 @@
+.container {
+  margin: 10px $volt-side-margin-md;
+  @media (max-width: $mantine-breakpoint-sm) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0px;
+  }
+  h1 {
+    padding: 0;
+    line-height: 1;
+    font-weight: 600;
+    margin: 10px 0px;
+    @media (max-width: $mantine-breakpoint-sm) {
+      text-align: center;
+    }
+  }
+}
+
+.viewContainer {
+  display: flex;
+  height: calc(100vh - 80px);
+  .viewElement {
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+
+.viewContent {
+  margin: 0 $volt-side-margin-md;
+  small {
+    color: var(--mantine-color-gray-7);
+  }
+}
+
+.viewHeader {
+  margin: calc($volt-side-margin-sm / 2) $volt-side-margin-md;
+  h2 {
+    margin: 0;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    span.details {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      cursor: pointer;
+      color: var(--mantine-color-gray-7);
+    }
+  }
+  small {
+    margin-left: 10px;
+  }
+}
