@@ -7,6 +7,8 @@ import { useProblem } from '@/data';
 import classes from '../problems.module.css';
 import { ProblemHeader } from './ProblemHeader';
 import { ProblemContent } from './ProblemContent';
+import { ProblemCodeEditor } from './ProblemCodeEditor';
+import { ProblemDetails } from './ProblemDetails';
 
 export function ProblemView({ problemId }: { problemId: number }) {
   const { t } = useTranslation();
@@ -35,7 +37,7 @@ export function ProblemView({ problemId }: { problemId: number }) {
           <div className={classes.viewContainer}>
             <div className={classes.viewElement}>
               <Tabs defaultValue="problem">
-                <Tabs.List>
+                <Tabs.List h="45px">
                   <Tabs.Tab value="problem" leftSection={<IoHammerOutline />}>
                     {t('user-problem-view-tab-problem')}
                   </Tabs.Tab>
@@ -49,11 +51,13 @@ export function ProblemView({ problemId }: { problemId: number }) {
                   <ProblemContent problem={problem!} />
                 </Tabs.Panel>
 
-                <Tabs.Panel value="details">Details tab content</Tabs.Panel>
+                <Tabs.Panel value="details">
+                  <ProblemDetails problem={problem!} />
+                </Tabs.Panel>
               </Tabs>
             </div>
             <div className={classes.viewElement}>
-              <p>{problem?.description}</p>
+              <ProblemCodeEditor problem={problem!} />
             </div>
           </div>
         </>

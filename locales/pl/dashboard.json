@@ -156,5 +156,14 @@
   "user-problem-view-header-accepted-count": "Liczba zaakceptowanych zgłoszeń",
   "user-problem-view-header-error-title": "Błąd",
   "user-problem-view-header-error-message": "Nie udało się załadować Właściciela zadania",
-  "user-problem-view-content-author": "Autor zadania: "
+  "user-problem-view-content-author": "Autor zadania: ",
+  "user-problem-view-code-editor-placeholder": "Tutaj możesz napisać swoje rozwiązanie...",
+  "user-problem-view-code-editor-language": "Wybierz język",
+  "user-problem-view-code-editor-reset": "Resetuj kod",
+  "user-problem-view-code-editor-reset-title": "Resetowanie kodu",
+  "user-problem-view-code-editor-reset-message": "Czy na pewno chcesz zresetować kod?\nWszystkie zmiany zostaną utracone.",
+  "user-problem-view-code-editor-reset-confirm": "Tak",
+  "user-problem-view-code-editor-reset-info-title": "Informacja",
+  "user-problem-view-code-editor-reset-info-message": "Kod został zresetowany",
+  "user-problem-view-code-editor-submit": "Sprawdź rozwiązanie"
 }

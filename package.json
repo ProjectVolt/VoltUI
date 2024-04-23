@@ -24,6 +24,8 @@
     "storybook:build": "storybook build"
   },
   "dependencies": {
+    "@codemirror/lang-cpp": "^6.0.2",
+    "@codemirror/lang-python": "^6.1.5",
     "@mantine/core": "7.6.1",
     "@mantine/form": "^7.6.2",
     "@mantine/hooks": "7.6.1",
@@ -31,6 +33,8 @@
     "@mdxeditor/editor": "^2.20.4",
     "@next/bundle-analyzer": "^14.1.3",
     "@tabler/icons-react": "^3.0.0",
+    "@uiw/codemirror-theme-github": "^4.21.25",
+    "@uiw/react-codemirror": "^4.21.25",
     "gray-matter": "^4.0.3",
     "i18next": "^23.10.1",
     "i18next-resources-to-backend": "^1.2.0",
