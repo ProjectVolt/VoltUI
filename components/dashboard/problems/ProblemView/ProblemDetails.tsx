@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Badge, Flex, Text } from '@mantine/core';
+import { Badge, Flex } from '@mantine/core';
 import { Problem } from '@/data';
 import classes from '../problems.module.css';
 
@@ -8,11 +8,11 @@ export function ProblemDetails({ problem }: { problem: Problem }) {
   return (
     <div className={classes.viewDetails}>
       <div>
-        <h2>Tytuł</h2>
+        <h2>{t('user-problem-view-details-title')}</h2>
         <p>{problem.name}</p>
       </div>
       <div>
-        <h2>Limity czasu</h2>
+        <h2>{t('user-problem-view-details-limits')}</h2>
         <Flex gap="md" wrap="wrap">
           <p>CPU {problem.timeLimit}ms</p>
           <p>RAM {problem.memoryLimit}MB</p>
@@ -20,13 +20,13 @@ export function ProblemDetails({ problem }: { problem: Problem }) {
       </div>
       {problem.author && (
         <div>
-          <h2>Autor</h2>
+          <h2>{t('user-problem-view-details-author')}</h2>
           <p>{problem.author}</p>
         </div>
       )}
       {problem.tags.length > 0 && (
         <div>
-          <h2>Tagi</h2>
+          <h2>{t('user-problem-view-details-tags')}</h2>
           <p>
             {problem.tags.map((tag) => (
               <Badge key={tag.id} variant="light" style={{ marginRight: '0.5rem' }}>
@@ -37,7 +37,7 @@ export function ProblemDetails({ problem }: { problem: Problem }) {
         </div>
       )}
       <div>
-        <h2>Poziom trudności</h2>
+        <h2>{t('user-problem-view-details-difficulty')}</h2>
         <p>
           <Badge
             variant="light"
@@ -60,30 +60,30 @@ export function ProblemDetails({ problem }: { problem: Problem }) {
         </p>
       </div>
       <div>
-        <h2>Maksymalny wynik</h2>
+        <h2>{t('user-problem-view-details-totalScore')}</h2>
         <p>{problem.totalScore}</p>
       </div>
       <div>
-        <h2>Statystyki</h2>
+        <h2>{t('user-problem-view-details-statistics')}</h2>
         <p>
           <Flex mt="sm" direction="column">
             <Badge variant="light" color="gray" rightSection={` ${problem.submissionCount}`}>
-              Wszystkie
+              {t('user-problem-view-details-statistics-all')}
             </Badge>
             <Badge variant="light" color="green" rightSection={` ${problem.acceptedSubmissions}`}>
-              Zaakceptowane
+              {t('user-problem-view-details-statistics-accepted')}
             </Badge>
             <Badge variant="light" color="blue" rightSection={` ${problem.partiallyAccepted}`}>
-              Częściowo zaakceptowane
+              {t('user-problem-view-details-statistics-partially-accepted')}
             </Badge>
             <Badge variant="light" color="red" rightSection={` ${problem.wrongSubmissions}`}>
-              Błędne
+              {t('user-problem-view-details-statistics-wrong')}
             </Badge>
             <Badge variant="light" color="black" rightSection={` ${problem.compileErrors}`}>
-              Błąd kompilacji
+              {t('user-problem-view-details-statistics-compile-errors')}
             </Badge>
             <Badge variant="light" color="orange" rightSection={` ${problem.runtimeErrors}`}>
-              Błąd wykonania
+              {t('user-problem-view-details-statistics-runtime-errors')}
             </Badge>
           </Flex>
         </p>

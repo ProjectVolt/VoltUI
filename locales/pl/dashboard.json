@@ -165,5 +165,18 @@
   "user-problem-view-code-editor-reset-confirm": "Tak",
   "user-problem-view-code-editor-reset-info-title": "Informacja",
   "user-problem-view-code-editor-reset-info-message": "Kod został zresetowany",
-  "user-problem-view-code-editor-submit": "Sprawdź rozwiązanie"
+  "user-problem-view-code-editor-submit": "Sprawdź rozwiązanie",
+  "user-problem-view-details-title": "Tytuł",
+  "user-problem-view-details-limits": "Limity",
+  "user-problem-view-details-author": "Autor",
+  "user-problem-view-details-tags": "Tagi",
+  "user-problem-view-details-difficulty": "Poziom trudności",
+  "user-problem-view-details-totalScore": "Maksymalna liczba punktów",
+  "user-problem-view-details-statistics": "Statystyki",
+  "user-problem-view-details-statistics-all": "Wszystkie",
+  "user-problem-view-details-statistics-accepted": "Zaakceptowane",
+  "user-problem-view-details-statistics-partially-accepted": "Częściowo zaakceptowane",
+  "user-problem-view-details-statistics-wrong": "Błędne",
+  "user-problem-view-details-statistics-compile-errors": "Błędy kompilacji",
+  "user-problem-view-details-statistics-runtime-errors": "Błędy wykonania"
 }
