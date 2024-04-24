@@ -178,5 +178,20 @@
   "user-problem-view-details-statistics-partially-accepted": "Częściowo zaakceptowane",
   "user-problem-view-details-statistics-wrong": "Błędne",
   "user-problem-view-details-statistics-compile-errors": "Błędy kompilacji",
-  "user-problem-view-details-statistics-runtime-errors": "Błędy wykonania"
+  "user-problem-view-details-statistics-runtime-errors": "Błędy wykonania",
+  "user-problem-list-error-title": "Błąd",
+  "user-problem-list-error-message": "Nie udało się załadować listy zadań",
+  "user-problem-list-search": "Szukaj",
+  "user-problem-list-title": "Lista zadań",
+  "user-problem-list-item-error-title": "Błąd",
+  "user-problem-list-item-error-message": "Nie udało się załadować Właściciela zadania",
+  "user-problem-list-item-difficulty-easy": "Łatwe",
+  "user-problem-list-item-difficulty-medium": "Średnie",
+  "user-problem-list-item-difficulty-hard": "Trudne",
+  "user-problem-list-item-added-by": "Dodane przez",
+  "user-problem-list-item-total": "Maksymalna liczba punktów",
+  "user-problem-list-item-total-points": "punktów",
+  "user-problem-list-item-submission-count": "Liczba zgłoszeń",
+  "user-problem-list-item-accepted-count": "Liczba zaakceptowanych zgłoszeń",
+  "user-problem-list-item-view": "Zobacz"
 }
