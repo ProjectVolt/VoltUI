@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Badge, Button, Flex, Skeleton, Switch, Table, TableData, Text } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import { useViewportSize } from '@mantine/hooks';
@@ -58,7 +58,6 @@ function VisibilitySwitch({
 
 export function ProblemList({ mutate, problems }: { mutate: () => void; problems: Problem[] }) {
   const { t } = useTranslation();
-  const router = useRouter();
   const tableDataFull: TableData = {
     head: [
       t('admin-problem-list-table-name'),
@@ -97,14 +96,21 @@ export function ProblemList({ mutate, problems }: { mutate: () => void; problems
       <VisibilitySwitch mutate={mutate} problemId={problem.id} visible={problem.visible} />,
       <Flex gap="sm" wrap="wrap">
         <Button
-          onClick={() => router.push(`/dashboard/admin/problems/edit/${problem.id}`)}
+          component={Link}
+          href={`/dashboard/admin/problems/edit/${problem.id}`}
           variant="outline"
           miw="100px"
           size="xs"
         >
           {t('admin-problem-list-table-actions-edit')}
         </Button>
-        <Button variant="outline" miw="100px" size="xs">
+        <Button
+          component={Link}
+          href={`/dashboard/problems/${problem.id}`}
+          variant="outline"
+          miw="100px"
+          size="xs"
+        >
           {t('admin-problem-list-table-actions-view')}
         </Button>
       </Flex>,

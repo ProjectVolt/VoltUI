@@ -1,0 +1,128 @@
+.container {
+  margin: 10px $volt-side-margin-md;
+  @media (max-width: $mantine-breakpoint-sm) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0px;
+  }
+  h1 {
+    padding: 0;
+    line-height: 1;
+    font-weight: 600;
+    margin: 10px 0px;
+    @media (max-width: $mantine-breakpoint-sm) {
+      text-align: center;
+    }
+  }
+}
+
+.listItem {
+  margin: calc($volt-side-margin-sm / 2) 0px;
+  position: relative;
+  h2 {
+    margin: 0;
+    white-space: nowrap;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    span.details {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      cursor: pointer;
+      color: var(--mantine-color-gray-7);
+    }
+  }
+  div.wrap {
+    flex-wrap: wrap;
+  }
+  div.viewButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (min-width: $mantine-breakpoint-lg) {
+      justify-content: flex-end;
+      width: 300px;
+      position: absolute;
+      right: $volt-side-margin-md;
+      top: 0;
+      bottom: 0;
+    }
+  }
+  small {
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+}
+
+.viewContainer {
+  display: flex;
+  height: calc(100vh - 80px);
+  .viewElement {
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+
+.viewContent {
+  margin: 0 $volt-side-margin-md;
+  small {
+    color: var(--mantine-color-gray-7);
+  }
+}
+
+.viewDetails {
+  margin: 20px $volt-side-margin-md;
+  h2 {
+    margin: 0;
+  }
+  div {
+    margin-bottom: 20px;
+  }
+  p {
+    margin: 0;
+    margin-top: 10px;
+  }
+}
+
+.viewHeader {
+  margin: calc($volt-side-margin-sm / 2) $volt-side-margin-md;
+  h2 {
+    margin: 0;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    span.details {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      cursor: pointer;
+      color: var(--mantine-color-gray-7);
+    }
+  }
+  small {
+    margin-left: 10px;
+  }
+}
+
+.viewCodeControls {
+  height: 45px;
+  width: 100%;
+  background-color: #0d1117;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  select {
+    margin: 0 10px;
+    background-color: var(--mantine-color-gray-7);
+    color: var(--mantine-color-gray-3);
+  }
+  div {
+    display: flex;
+    align-items: center;
+  }
+}

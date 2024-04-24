@@ -43,7 +43,7 @@ export function Navbar() {
   const items = data.map((item) => (
     <NavLink
       key={item.label}
-      active={item.path === pathname}
+      active={pathname.startsWith(item.path)}
       label={t(item.label)}
       description={t(item.description)}
       leftSection={<item.icon size="1rem" />}
