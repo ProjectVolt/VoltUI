@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { ProblemView } from '@/components/dashboard/problems/ProblemView';
 
-export default function AdminProblemEditPage({ params }: { params: { id: string } }) {
+export default function ProblemViewPage({ params }: { params: { id: string } }) {
   const { t } = useTranslation();
   useEffect(() => {
     if (!params.id || Number.isNaN(parseInt(params.id, 10))) {

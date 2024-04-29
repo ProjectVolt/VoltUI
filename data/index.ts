@@ -6,3 +6,5 @@ export * from './updateUser';
 export * from './useProblem';
 export * from './updateProblem';
 export * from './addTag';
+export * from './useSubmission';
+export * from './sendSubmission';

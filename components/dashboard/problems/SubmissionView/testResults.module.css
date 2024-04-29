@@ -1,0 +1,9 @@
+.control {
+  &:disabled,
+  &[data-disabled] {
+    opacity: 1;
+    .chevron {
+      opacity: 0;
+    }
+  }
+}

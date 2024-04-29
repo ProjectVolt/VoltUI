@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { notifications } from '@mantine/notifications';
 import { CodeEditor } from '@/components/shared/CodeEditor';
 import { CodeEditorControls } from './CodeEditorControls';
-import { Problem } from '@/data';
+import { CreateSubmissionData, Problem, createSubmission, useJwtData } from '@/data';
 
 const getLang = (lang: string) => {
   switch (lang) {
@@ -18,10 +18,18 @@ const getLang = (lang: string) => {
   }
 };
 
-export function ProblemCodeEditor({ problem }: { problem: Problem }) {
+export function ProblemCodeEditor({
+  problem,
+  mutateProblem,
+}: {
+  problem: Problem;
+  mutateProblem: () => void;
+}) {
   const { t } = useTranslation();
   const [code, setCode] = useState('');
   const [language, setLanguage] = useState(problem.languages[0]);
+  const [submissionCount, setSubmissionCount] = useState(0);
+  const { token } = useJwtData();
 
   const resetCode = () => {
     setCode('');
@@ -31,20 +39,60 @@ export function ProblemCodeEditor({ problem }: { problem: Problem }) {
     });
   };
 
-  const mockSend = () =>
-    new Promise<void>((resolve) => {
-      setTimeout(() => {
-        resolve();
-      }, 2000);
-    });
-
+  const sendSubmission = async () => {
+    if (code.length === 0 || code.length > 50000) {
+      notifications.show({
+        title: t('user-problem-view-code-editor-send-validation-error-title'),
+        message: t('user-problem-view-code-editor-send-validation-error-message'),
+        color: 'red',
+      });
+      return;
+    }
+    const data: CreateSubmissionData = {
+      sourceCode: code,
+      language,
+      problemId: problem.id,
+    };
+    try {
+      if (!token) throw new Error('no-token');
+      const submission = await createSubmission(token, data);
+      setSubmissionCount(submissionCount + 1);
+      notifications.show({
+        title: t('user-problem-view-code-editor-send-success-title'),
+        message: `${t('user-problem-view-code-editor-send-success-message')} #${submission.id}`,
+        color: 'green',
+      });
+    } catch (error: any) {
+      let message = t('user-problem-view-code-editor-send-error-message');
+      switch (error.message) {
+        case 'no-token':
+          message = t('user-problem-view-code-editor-send-error-no-token-message');
+          break;
+        case 'invalid-data':
+          message = t('user-problem-view-code-editor-send-error-invalid-data-message');
+          break;
+        case 'unexpected-error':
+          message = t('user-problem-view-code-editor-send-error-unexpected-error-message');
+          break;
+        default:
+          break;
+      }
+      notifications.show({
+        title: t('user-problem-view-code-editor-send-error-title'),
+        message,
+        color: 'red',
+      });
+    }
+  };
   return (
     <>
       <CodeEditorControls
-        onSend={mockSend}
+        onSend={sendSubmission}
         onReset={resetCode}
-        lang={language}
+        mutateProblem={mutateProblem}
         onLangChange={setLanguage}
+        submissionCount={submissionCount}
+        lang={language}
         problem={problem}
       />
       <CodeEditor
