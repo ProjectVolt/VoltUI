@@ -5,19 +5,24 @@ import { IoReloadOutline, IoSendOutline } from 'react-icons/io5';
 import { useDisclosure } from '@mantine/hooks';
 import { Problem } from '@/data';
 import classes from '../problems.module.css';
+import { LastSubmission } from './LastSubmission';
 
 export function CodeEditorControls({
   problem,
   lang,
+  submissionCount,
+  mutateProblem,
   onReset,
   onSend,
   onLangChange,
 }: {
   problem: Problem;
   lang: string;
+  submissionCount: number;
+  mutateProblem: () => void;
   onReset: () => void;
   onSend: () => Promise<void>;
-  onLangChange: (lang: string) => void;
+  onLangChange: (lang: 'python' | 'c' | 'cpp') => void;
 }) {
   const { t } = useTranslation();
   const [opened, { open, close }] = useDisclosure(false);
@@ -34,7 +39,7 @@ export function CodeEditorControls({
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    onLangChange(e.currentTarget.value);
+    onLangChange(e.currentTarget.value as 'python' | 'c' | 'cpp');
   };
 
   return (
@@ -66,6 +71,13 @@ export function CodeEditorControls({
         >
           {t('user-problem-view-code-editor-reset')}
         </Button>
+      </div>
+      <div>
+        <LastSubmission
+          submissionCount={submissionCount}
+          mutateProblem={mutateProblem}
+          problem={problem}
+        />
       </div>
       <div>
         <Button

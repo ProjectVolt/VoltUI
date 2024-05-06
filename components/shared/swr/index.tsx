@@ -22,7 +22,12 @@ export function SwrWrapper({ children }: { children: any }) {
             headers: {
               Authorization: token ?? '',
             },
-          }).then((res) => res.json()),
+          }).then((res) => {
+            if (res.status >= 400 && res.status < 600) {
+              throw new Error('An error occurred');
+            }
+            return res.json();
+          }),
       }}
     >
       {children}

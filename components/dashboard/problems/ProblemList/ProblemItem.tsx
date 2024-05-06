@@ -100,7 +100,7 @@ export function ProblemItem({ problem }: { problem: Problem }) {
             <small>
               {problem.acceptedSubmissions}{' '}
               {problem.submissionCount > 0 ? (
-                <>({(problem.acceptedSubmissions / problem.submissionCount) * 100}%)</>
+                <>({((problem.acceptedSubmissions / problem.submissionCount) * 100).toFixed(0)}%)</>
               ) : (
                 <></>
               )}

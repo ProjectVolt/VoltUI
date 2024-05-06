@@ -13,7 +13,7 @@ export type Problem = {
   visible: boolean;
   name: string;
   description: string;
-  languages: string[];
+  languages: ('python' | 'c' | 'cpp')[];
   template: string;
   addedBy: number;
   timeLimit: number;

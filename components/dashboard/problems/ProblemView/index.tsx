@@ -12,7 +12,7 @@ import { ProblemDetails } from './ProblemDetails';
 
 export function ProblemView({ problemId }: { problemId: number }) {
   const { t } = useTranslation();
-  const { problem, isLoading, error } = useProblem(problemId);
+  const { problem, isLoading, error, mutate } = useProblem(problemId);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     if (!isLoading) {
@@ -57,7 +57,7 @@ export function ProblemView({ problemId }: { problemId: number }) {
               </Tabs>
             </div>
             <div className={classes.viewElement}>
-              <ProblemCodeEditor problem={problem!} />
+              <ProblemCodeEditor mutateProblem={mutate} problem={problem!} />
             </div>
           </div>
         </>
