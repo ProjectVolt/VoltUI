@@ -5,7 +5,7 @@ import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import bash from 'react-syntax-highlighter/dist/cjs/languages/prism/bash';
 import { Submission, TestResult } from '@/data';
-import { SubmissionStatusBadge } from './SubmissionStatusBadge';
+import { SubmissionStatusBadge } from '../../../shared/SubmissionStatusBadge';
 import classes from './testResults.module.css';
 
 SyntaxHighlighter.registerLanguage('bash', bash);

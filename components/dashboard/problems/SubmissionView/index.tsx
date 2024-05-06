@@ -8,7 +8,7 @@ import { IoCodeOutline, IoLogoPython } from 'react-icons/io5';
 import { useSubmissionById } from '@/data';
 import classes from '../problems.module.css';
 import { TestResults } from './TestResults';
-import { SubmissionStatusBadge } from './SubmissionStatusBadge';
+import { SubmissionStatusBadge } from '../../../shared/SubmissionStatusBadge';
 import { SourceCode } from './SourceCode';
 import { CompileError } from './CompileError';
 import { RuntimeError } from './RuntimeError';

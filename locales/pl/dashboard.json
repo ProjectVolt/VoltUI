@@ -235,5 +235,13 @@
   "user-submission-view-compile-error": "Błąd kompilacji",
   "user-submission-view-default-compile-error-msg": "Brak informacji o błędzie kompilacji",
   "user-submission-view-runtime-error": "Błąd wykonania",
-  "user-submission-view-default-runtime-error-msg": "Brak informacji o błędzie wykonania"
+  "user-submission-view-default-runtime-error-msg": "Brak informacji o błędzie wykonania",
+  "user-activity-error-title": "Błąd",
+  "user-activity-error-message": "Nie udało się załadować ostatniej aktywności",
+  "user-activity-title": "Ostatnia aktywność",
+  "user-activity-item-title": "Zgłoszenie",
+  "user-activity-item-error-title": "Błąd",
+  "user-activity-item-error-message": "Nie udało się załadować autora zgłoszenia",
+  "user-activity-tooltip-cpu-memory": "Maksymalna wartość",
+  "user-activity-item-view": "Zobacz"
 }

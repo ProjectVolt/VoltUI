@@ -1,4 +1,5 @@
 import useSWR from 'swr';
+import useSWRInfinite from 'swr/infinite';
 
 export type SubmissionStatus =
   | 'PENDING'
@@ -71,6 +72,29 @@ export function useLastSubmission(problemId: number): {
   const { data, error, isLoading, mutate } = useSWR(`submission/problem/${problemId}?limit=1`);
   return {
     submission: Array.isArray(data) && data.length > 0 ? data[0] : null,
+    isLoading,
+    error: error ?? (Array.isArray(data) ? undefined : 'not-array'),
+    mutate,
+  };
+}
+
+export function useSubmissionsInfinite(): {
+  submissions: Submission[] | null;
+  size: number;
+  setSize: (size: number) => void;
+  isLoading: boolean;
+  error: string | null;
+  mutate: () => void;
+} {
+  const getKey = (pageIndex: number, previousPageData: Submission[] | null) => {
+    if (previousPageData && !previousPageData.length) return null;
+    return `submission/?${new URLSearchParams({ page: pageIndex.toString(), pageSize: '10' })}`;
+  };
+  const { data, size, setSize, error, isLoading, mutate } = useSWRInfinite(getKey);
+  return {
+    submissions: Array.isArray(data) ? data.flatMap((i) => i) : [],
+    size,
+    setSize,
     isLoading,
     error: error ?? (Array.isArray(data) ? undefined : 'not-array'),
     mutate,

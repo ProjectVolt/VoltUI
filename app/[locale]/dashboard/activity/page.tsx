@@ -1,5 +1,7 @@
 'use client';
 
+import { Activity } from '@/components/dashboard/activity';
+
 export default function ActivityPage() {
-  return <div>Activity</div>;
+  return <Activity />;
 }
